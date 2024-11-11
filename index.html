@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>詹雁婷 - 專業主持人與烏克麗麗演奏者</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-content">
+            <div class="logo">詹雁婷</div>
+            <ul class="nav-links">
+                <li><a href="#about">關於我</a></li>
+                <li><a href="#portfolio">作品集</a></li>
+                <li><a href="#services">服務項目</a></li>
+                <li><a href="#testimonials">客戶評價</a></li>
+                <li><a href="#contact">聯繫我</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>詹雁婷</h1>
+            <h2>專業主持人與烏克麗麗演奏者</h2>
+            <p>為您的活動增添獨特的魅力</p>
+            <a href="#contact" class="cta-button">預約諮詢</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>關於我</h2>
+        <div class="about-content">
+            <img src="/images/IMG_4735.JPG" alt="詹雁婷個人照片" class="profile-image" style="width: 300px; height: 300px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto;">
+            <div class="about-text">
+                <h3>專業經歷</h3>
+                <p>擁有超過5年的活動主持經驗，專精於婚禮、企業活動及各類型派對主持。</p>
+                <p>同時也是專業的烏克麗麗演奏者，為您的活動增添獨特的音樂風味。</p>
+                <div class="experience-stats">
+                    <div class="stat">
+                        <span class="number">500+</span>
+                        <span class="label">成功活動</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">300+</span>
+                        <span class="label">滿意客戶</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">5+</span>
+                        <span class="label">年專業經驗</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <h2>精選作品</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                <h3>企業年會主持</h3>
+            </div>
+            <div class="portfolio-item">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                <h3>婚禮演出集錦</h3>
+            </div>
+            <div class="portfolio-item">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                <h3>烏克麗麗演奏</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>服務項目</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-microphone"></i>
+                <h3>活動主持</h3>
+                <p>專業活動主持服務，包括：</p>
+                <ul>
+                    <li>婚禮主持</li>
+                    <li>企業活動</li>
+                    <li>派對主持</li>
+                    <li>頒獎典禮</li>
+                </ul>
+                <a href="#contact" class="service-button">了解更多</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-music"></i>
+                <h3>烏克麗麗演出</h3>
+                <p>多元風格演出，包括：</p>
+                <ul>
+                    <li>婚禮演奏</li>
+                    <li>派對表演</li>
+                    <li>企業活動演出</li>
+                    <li>私人派對</li>
+                </ul>
+                <a href="#contact" class="service-button">了解更多</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section id="calendar" class="calendar">
+        <h2>檔期查詢</h2>
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                <h3 id="monthDisplay"></h3>
+                <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="weekdays">
+                <div></div>
+                <div>一</div>
+                <div>二</div>
+                <div>三</div>
+                <div>四</div>
+                <div>五</div>
+                <div>六</div>
+            </div>
+            <div id="calendar-days" class="calendar-days"></div>
+            <div class="calendar-legend">
+                <div class="legend-item">
+                    <div class="legend-color available"></div>
+                    <span>可預約</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color booked"></div>
+                    <span>已預約</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 添加時段顯示彈窗 -->
+        <div id="timeSlotModal" class="time-slot-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="selectedDate"></h3>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="time-slots">
+                    <div class="time-slot-column">
+                        <h4>上午時段</h4>
+                        <div class="slot" data-time="09:00">09:00</div>
+                        <div class="slot" data-time="10:00">10:00</div>
+                        <div class="slot" data-time="11:00">11:00</div>
+                    </div>
+                    <div class="time-slot-column">
+                        <h4>下午時段</h4>
+                        <div class="slot" data-time="14:00">14:00</div>
+                        <div class="slot" data-time="15:00">15:00</div>
+                        <div class="slot" data-time="16:00">16:00</div>
+                    </div>
+                    <div class="time-slot-column">
+                        <h4>晚間時段</h4>
+                        <div class="slot" data-time="19:00">19:00</div>
+                        <div class="slot" data-time="20:00">20:00</div>
+                        <div class="slot" data-time="21:00">21:00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>客戶評價</h2>
+        <div class="testimonials-slider">
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"詹雁婷的主持風格活潑生動，讓我們的婚禮充���歡笑與溫馨。"</p>
+                    <div class="client-info">
+                        <img src="images/client1.jpg" alt="客戶照片">
+                        <div>
+                            <h4>陳小姐</h4>
+                            <p>新娘</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 更多評價... -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>聯繫我</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>聯絡資訊</h3>
+                <p><i class="fas fa-phone"></i> 0905-402-069</p>
+                <p><i class="fas fa-envelope"></i> yolandachanyenting@gmail.com</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/ting.124?igsh=MTUxMXAybGVsaWp6Ng%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="您的姓名" required>
+                <input type="email" placeholder="電子郵件" required>
+                <input type="tel" placeholder="聯絡電話" required>
+                <select required>
+                    <option value="">選擇服務項目</option>
+                    <option value="wedding">婚禮主持</option>
+                    <option value="corporate">企業活動</option>
+                    <option value="party">派對主持</option>
+                    <option value="music">烏克麗麗演出</option>
+                </select>
+                <textarea placeholder="請留下您的訊息" required></textarea>
+                <button type="submit">送出查詢</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>詹雁婷</h3>
+                <p>專業活動主持人 & 烏克麗麗演奏者</p>
+            </div>
+            <div class="footer-section">
+                <h3>快速連結</h3>
+                <ul>
+                    <li><a href="#about">關於我</a></li>
+                    <li><a href="#services">服務項目</a></li>
+                    <li><a href="#contact">聯繫我</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>聯絡方式</h3>
+                <p>電話：0905-402-069</p>
+                <p>信箱：yolandachanyenting@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 詹雁婷 版權所有</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
